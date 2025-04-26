@@ -15,12 +15,17 @@ export default [
       exports: "named",
     },
     plugins: [
-      peerDepsExternal(),
+      peerDepsExternal({
+        includeDependencies: true,
+      }),
       babel({
         babelHelpers: "bundled",
         exclude: "node_modules/**",
       }),
-      resolve(),
+      resolve({
+        // Prefer built-in modules
+        preferBuiltins: true,
+      }),
       commonjs(),
     ],
     external: ["react", "react-dom", "vue"],
@@ -35,12 +40,17 @@ export default [
       exports: "named",
     },
     plugins: [
-      peerDepsExternal(),
+      peerDepsExternal({
+        includeDependencies: true,
+      }),
       babel({
         babelHelpers: "bundled",
         exclude: "node_modules/**",
       }),
-      resolve(),
+      resolve({
+        // Prefer built-in modules
+        preferBuiltins: true,
+      }),
       commonjs(),
     ],
     external: ["react", "react-dom", "vue"],
@@ -60,13 +70,17 @@ export default [
       },
     },
     plugins: [
-      peerDepsExternal(),
+      peerDepsExternal({
+        includeDependencies: true,
+      }),
       babel({
         babelHelpers: "bundled",
         exclude: "node_modules/**",
       }),
       resolve({
         browser: true,
+        // Prefer built-in modules
+        preferBuiltins: true,
       }),
       commonjs(),
       terser(),
