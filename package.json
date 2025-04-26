@@ -2,6 +2,7 @@
     "name": "ai18n",
     "version": "0.1.0",
     "description": "Client SDK for AI-powered i18n translation service",
+    "type": "module",
     "main": "dist/index.js",
     "module": "dist/index.esm.js",
     "types": "types/index.d.ts",
