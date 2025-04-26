@@ -115,26 +115,26 @@ export function LanguageSelector(props: {
   className?: string;
 }): JSX.Element;
 
-// Vue component types
+// Vue component types (available only when Vue is installed)
 export function createI18n(config: I18nClientConfig): {
   client: I18nClient;
-  targetLanguage: import('vue').Ref<string>;
-  sourceLanguage: import('vue').Ref<string>;
-  isLoaded: import('vue').Ref<boolean>;
-  languages: import('vue').Ref<Language[]>;
+  targetLanguage: any; // Use 'any' instead of direct Vue import
+  sourceLanguage: any;
+  isLoaded: any;
+  languages: any;
   setTargetLanguage: (language: string) => void;
   translate: (text: string, options?: TranslateOptions) => Promise<string>;
 };
 
-export function useI18n(): ReturnType<typeof createI18n>;
+export function useVueI18n(): ReturnType<typeof createI18n>;
 
 export function useTranslation(
-  textOrRef: string | (() => string) | import('vue').Ref<string>,
+  textOrRef: string | (() => string) | any, // Use 'any' instead of direct Vue import
   options?: TranslateOptions
 ): {
-  text: import('vue').Ref<string>;
-  isLoading: import('vue').Ref<boolean>;
-  error: import('vue').Ref<string | null>;
+  text: any; // Use 'any' instead of direct Vue import
+  isLoading: any;
+  error: any;
 };
 
 // Default export
