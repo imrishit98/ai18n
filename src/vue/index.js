@@ -1,4 +1,20 @@
-import { ref, reactive, provide, inject, watch, onMounted } from "vue";
+// Try to import Vue, but handle case when it's not available
+let vue;
+try {
+  vue = require("vue");
+} catch (e) {
+  // Vue is not available, provide stubs
+  vue = {
+    ref: () => ({}),
+    reactive: (obj) => obj,
+    provide: () => {},
+    inject: () => {},
+    watch: () => {},
+    onMounted: (fn) => {},
+  };
+}
+
+const { ref, reactive, provide, inject, watch, onMounted } = vue;
 import I18nClient from "../core";
 
 const I18N_SYMBOL = Symbol("i18n");
@@ -144,3 +160,10 @@ export function useTranslation(textOrRef, options = {}) {
     error,
   };
 }
+
+// Export as default object for conditional imports
+export default {
+  createI18n,
+  useI18n,
+  useTranslation,
+};
