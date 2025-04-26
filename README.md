@@ -1,11 +1,11 @@
-# ai18n
+# easy-ai18n
 
 A lightweight, flexible client library for integrating with AI-powered translation services.
 
 ## Installation
 
 ```bash
-npm install ai18n
+npm install easy-ai18n
 ```
 
 ## Quick Start
@@ -13,7 +13,7 @@ npm install ai18n
 ### Basic Usage
 
 ```javascript
-import I18nClient from 'ai18n';
+import I18nClient from 'easy-ai18n';
 
 const i18n = new I18nClient({
   apiKey: 'your-api-key', 
@@ -31,7 +31,7 @@ console.log(result.text); // '¡Hola mundo!'
 
 ```jsx
 import React from 'react';
-import { I18nProvider, useTranslate, Translate, LanguageSelector } from 'ai18n';
+import { I18nProvider, useTranslate, Translate, LanguageSelector } from 'easy-ai18n';
 
 // In your root component
 function App() {
@@ -70,7 +70,7 @@ function AnotherComponent() {
 
 ```javascript
 import { createApp } from 'vue';
-import { createI18n, useTranslation } from 'ai18n';
+import { createI18n, useTranslation } from 'easy-ai18n';
 
 const app = createApp(App);
 
